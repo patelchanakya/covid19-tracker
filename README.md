@@ -1,3 +1,7 @@
+Designed a webpage that makes use of a Carona Virus API, to fetch live data that updates onto the site.
+
+_________________________________________________________________________________________________________________________
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
