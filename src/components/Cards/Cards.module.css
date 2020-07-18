@@ -1,0 +1,25 @@
+.container {
+  margin: 5% 5% 10% 5%;
+}
+
+.card {
+  margin: 0 3% !important; 
+  background-color: saddlebrown;
+}
+
+
+.infected {
+  border-bottom: 13px solid #8ABAD3;
+}
+
+.recovered {
+  border-bottom: 13px solid #A8D5BA;
+}
+
+.deaths {
+  border-bottom: 13px solid #EDC2D8;
+}
+
+.h5 {
+  color: red;
+}
