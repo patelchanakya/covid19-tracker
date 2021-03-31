@@ -1,4 +1,7 @@
-Designed a webpage that makes use of a Carona Virus API, to fetch live data that updates onto the site.
+Site deployed on Netlify:
+https://covid19trackerreactapp.netlify.app
+
+Designed a react app that makes use of a Carona Virus API, to fetch live Covid-19 information.
 
 _________________________________________________________________________________________________________________________
 
