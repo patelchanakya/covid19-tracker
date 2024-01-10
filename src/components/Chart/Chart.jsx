@@ -4,22 +4,30 @@ import { Line, Bar } from 'react-chartjs-2';
 
 import styles from './Chart.module.css';
 
-const Chart = ({ data: { confirmed, deaths, recovered }, country }) => {
+const Chart = ({ country }) => { // Assuming 'country' is passed as a prop
   const [dailyData, setDailyData] = useState([]);
 
-  // async needs to be put inside
   useEffect(() => {
     const fetchAPI = async () => {
-      setDailyData(await fetchDailyData());
-    }
+      const initialDailyData = await fetchDailyData();
+      if (initialDailyData) {
+        setDailyData(initialDailyData);
+      } else {
+        setDailyData([]);
+      }
+    };
 
     fetchAPI();
+  }, []);
 
-  }, []); // empty array so useEffect happens only once
+  // Assuming 'confirmed', 'recovered', and 'deaths' are part of the 'dailyData' object
+  // and you want to use their most recent values for the bar chart:
+  const mostRecentData = dailyData && dailyData.length ? dailyData[dailyData.length - 1] : {};
+  const { confirmed, recovered, deaths } = mostRecentData;
+
 
   const lineChart = (
-    // if data available, return line chart
-    dailyData.length
+    (dailyData && dailyData.length) // Now dailyData is guaranteed to be an array
       ? (
         <Line
           data={{

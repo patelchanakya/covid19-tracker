@@ -6,11 +6,13 @@ import cx from 'classnames';
 
 import styles from './Cards.module.css';
 
-// destructure props to confirmed, recovered, deaths, lastUpdate
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  if (!confirmed) {
-    return "Loading"
+const Cards = ({ data }) => {
+  if (!data || !data.confirmed) {
+    return "Loading...";
   }
+
+  const { confirmed, recovered, deaths, lastUpdate } = data;
+
 
   return (
     <div className={styles.container}>
